@@ -6,11 +6,11 @@ inputs:
     required: true
     default: ${{ github.sha }}
   username:
-    description: 'Dockerhub username defaults to the secret DOCKERHUB_USERNAME'
+    description: 'Dockerhub username defaults to vars.DOCKERHUB_USERNAME'
     required: true
-    default: ${{ secrets.DOCKERHUB_USERNAME }}
+    default: ${{ vars.DOCKERHUB_USERNAME }}
   token:
-    description: 'Dockerhub token defaults to the secret DOCKERHUB_TOKEN'
+    description: 'Dockerhub token defaults to secrets.DOCKERHUB_TOKEN'
     required: true
     default: ${{ secrets.DOCKERHUB_TOKEN }}
 outputs:
