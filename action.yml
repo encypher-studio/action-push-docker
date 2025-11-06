@@ -1,15 +1,15 @@
 name: "Push to docker and tag"
-description: "Push to docker and tag with branch name and input tag, defaults to workflow sha. Pushes to {docker_username}/{repo_name}:branch_name, {docker_username}/{repo_name}:input_tag"
+description: "Push to docker and tag with branch name and input tag, defaults to workflow sha. Pushes to {docker_username}/{repo_name}:{branch_name}, {docker_username}/{repo_name}:{input_tag}"
 inputs:
   tag:
     description: 'Extra tag to add other than branch name'
     required: true
     default: ${{ github.sha }}
   username:
-    description: 'Dockerhub username defaults to vars.DOCKERHUB_USERNAME'
+    description: 'Dockerhub username'
     required: true
   token:
-    description: 'Dockerhub token defaults to secrets.DOCKERHUB_TOKEN'
+    description: 'Dockerhub token'
     required: true
 outputs:
   value:
