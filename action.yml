@@ -11,7 +11,6 @@ inputs:
   token:
     description: 'Dockerhub token defaults to secrets.DOCKERHUB_TOKEN'
     required: true
-    default: ${{ secrets.DOCKERHUB_TOKEN }}
 outputs:
   value:
     description: "The last non-merge commit"
@@ -32,4 +31,4 @@ runs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ github.ref_name }}, ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ inputs.tag }}
+          tags: ${{ inputs.username }}/${{ github.event.repository.name }}:${{ github.ref_name }}, ${{ inputs.username }}/${{ github.event.repository.name }}:${{ inputs.tag }}
