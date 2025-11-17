@@ -14,6 +14,9 @@ inputs:
   context:
     description: "Build's context is the set of files located in the specified PATH or URL"
     required: false
+  file:
+    description: "Path to the Dockerfile"
+    required: false
 outputs:
   value:
     description: "The last non-merge commit"
@@ -36,3 +39,4 @@ runs:
           push: true
           context: ${{ inputs.context }}
           tags: ${{ inputs.username }}/${{ github.event.repository.name }}:${{ github.ref_name }}, ${{ inputs.username }}/${{ github.event.repository.name }}:${{ inputs.tag }}
+          file: ${{ inputs.file }}
