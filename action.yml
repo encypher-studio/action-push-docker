@@ -40,3 +40,5 @@ runs:
           context: ${{ inputs.context }}
           tags: ${{ inputs.username }}/${{ github.event.repository.name }}:${{ github.ref_name }}, ${{ inputs.username }}/${{ github.event.repository.name }}:${{ inputs.tag }}
           file: ${{ inputs.file }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
